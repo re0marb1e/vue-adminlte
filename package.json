@@ -1,8 +1,8 @@
 {
-  "name": "vue2-admin-lte",
-  "version": "0.4.2",
-  "description": "adminLTE to vuejs v2.x converting project",
-  "author": "devjin0617 <devjin0617@gmail.com>",
+  "name": "vue-adminlte",
+  "version": "0.0.1",
+  "description": "adminLTE to vuejs v2.x converting project based on devjin0617/vue2-admin-lte",
+  "author": "re0marb1e <zhxt1016@gmail.com>",
   "scripts": {
     "mock": "./node_modules/.bin/json-server ./mock-server/index.js",
     "dev-server": "node build/dev-server.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devjin0617/vue2-admin-lte"
+    "url": "git+https://github.com/re0marb1e/vue-adminlte"
   },
   "keywords": [
     "admin-lte",
@@ -30,9 +30,9 @@
     "front-end"
   ],
   "bugs": {
-    "url": "https://github.com/devjin0617/vue2-admin-lte/issues"
+    "url": "https://github.com/re0marb1e/vue-adminlte/issues"
   },
-  "hompage": "https://github.com/devjin0617/vue2-admin-lte#readme",
+  "hompage": "https://github.com/re0marb1e/vue-adminlte#readme",
   "dependencies": {
     "admin-lte": "2.3.11",
     "axios": "^0.15.3",
