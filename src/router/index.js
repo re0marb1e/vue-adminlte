@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from 'components/Hello.vue'
-import Sample from 'components/Sample.vue'
-import DashboardV1 from 'examples/Dashboard.v1.vue'
-import DashboardV2 from 'examples/Dashboard.v2.vue'
-import InfoBoxExample from 'examples/InfoBoxExample'
-import ChartExample from 'examples/ChartExample'
-import AlertExample from 'examples/AlertExample'
-import ModalExample from 'examples/ModalExample'
-import WidgetsExample from 'examples/WidgetsExample'
-import APIExample from 'examples/APIExample'
+import Sample from 'pages/Sample.vue'
+import DashboardV1 from 'pages/Dashboard.v1.vue'
+import DashboardV2 from 'pages/Dashboard.v2.vue'
+import InfoBoxExample from 'pages/InfoBoxExample'
+import ChartExample from 'pages/ChartExample'
+import AlertExample from 'pages/AlertExample'
+import ModalExample from 'pages/ModalExample'
+import WidgetsExample from 'pages/WidgetsExample'
+import APIExample from 'pages/APIExample'
 
 // UI Element Groups
 import General from 'pages/ui-elements/General.vue'
@@ -30,11 +29,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/sample',
       name: 'Sample',
       component: Sample
     },

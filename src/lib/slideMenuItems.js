@@ -12,14 +12,6 @@ module.exports = [
       {
         type: 'item',
         icon: 'fa fa-circle-o',
-        name: '헬로화면',
-        router: {
-          name: 'Hello'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
         name: '샘플화면',
         router: {
           name: 'Sample'
@@ -47,14 +39,6 @@ module.exports = [
         name: 'InfoBox',
         router: {
           name: 'InfoBoxExample'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
-        name: 'Chart.js',
-        router: {
-          name: 'ChartExample'
         }
       },
       {
@@ -129,6 +113,21 @@ module.exports = [
     router: {
       name: 'WidgetsExample'
     }
+  },
+  {
+    type: 'tree',
+    icon: 'fa fa-dashboard',
+    name: 'Charts',
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Chart.js',
+        router: {
+          name: 'ChartExample'
+        }
+      }
+    ]
   },
   {
     type: 'tree',
