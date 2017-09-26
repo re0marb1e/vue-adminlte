@@ -12,14 +12,6 @@ module.exports = [
       {
         type: 'item',
         icon: 'fa fa-circle-o',
-        name: '샘플화면',
-        router: {
-          name: 'Sample'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
         name: 'Dashboard v1',
         router: {
           name: 'DashboardV1'
@@ -31,38 +23,6 @@ module.exports = [
         name: 'Dashboard v2',
         router: {
           name: 'DashboardV2'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
-        name: 'InfoBox',
-        router: {
-          name: 'InfoBoxExample'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
-        name: 'Alert',
-        router: {
-          name: 'AlertExample'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
-        name: 'Modal',
-        router: {
-          name: 'ModalExample'
-        }
-      },
-      {
-        type: 'item',
-        icon: 'fa fa-circle-o',
-        name: 'APIExample',
-        router: {
-          name: 'APIExample'
         }
       }
     ]
@@ -180,6 +140,38 @@ module.exports = [
         name: 'Modals',
         router: {
           name: 'Modals'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'InfoBox',
+        router: {
+          name: 'InfoBoxExample'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Alert',
+        router: {
+          name: 'AlertExample'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Modal',
+        router: {
+          name: 'ModalExample'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'APIExample',
+        router: {
+          name: 'APIExample'
         }
       }
     ]

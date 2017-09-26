@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import VANaviBar from 'NaviBar.vue'
-import VASlider from 'Slider.vue'
-import VAContentWrap from 'ContentWrap.vue'
+import VANaviBar from './layout/VANaviBar'
+import VASlider from './layout/VASlider'
+import VAContentWrap from './layout/VAContentWrap.vue'
 import Modal from './components/Modal.vue'
 import store from './vuex/store.js'
 import slideMenuItems from './lib/slideMenuItems.js'

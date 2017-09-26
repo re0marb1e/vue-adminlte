@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Sample from 'pages/Sample.vue'
-import DashboardV1 from 'pages/Dashboard.v1.vue'
-import DashboardV2 from 'pages/Dashboard.v2.vue'
+
+import DefaultHeader from 'pages/DefaultHeader.vue'
+
+import DashboardV1 from 'pages/dashboard/Dashboardv1.vue'
+import DashboardV2 from 'pages/dashboard/Dashboardv2.vue'
+import DashboardV1Header from 'pages/dashboard/Dashboardv1Header.vue'
+import DashboardV2Header from 'pages/dashboard/Dashboardv2Header.vue'
+
 import InfoBoxExample from 'pages/InfoBoxExample'
 import ChartExample from 'pages/ChartExample'
 import AlertExample from 'pages/AlertExample'
@@ -28,89 +33,133 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Sample',
-      component: Sample
-    },
-    {
       path: '/dashboard/v1',
+      alias: '/',
       name: 'DashboardV1',
-      component: DashboardV1
+      components: {
+        default: DashboardV1,
+        header: DashboardV1Header
+      }
     },
     {
       path: '/dashboard/v2',
       name: 'DashboardV2',
-      component: DashboardV2
+      components: {
+        default: DashboardV2,
+        header: DashboardV2Header
+      }
     },
     {
       path: '/examples/infobox',
       name: 'InfoBoxExample',
-      component: InfoBoxExample
+      components: {
+        default: InfoBoxExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/examples/chart',
       name: 'ChartExample',
-      component: ChartExample
+      components: {
+        default: ChartExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/examples/alert',
       name: 'AlertExample',
-      component: AlertExample
+      components: {
+        default: AlertExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/examples/modal',
       name: 'ModalExample',
-      component: ModalExample
+      components: {
+        default: ModalExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/examples/widgets',
       name: 'WidgetsExample',
-      component: WidgetsExample
+      components: {
+        default: WidgetsExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/examples/api-example',
       name: 'APIExample',
-      component: APIExample
+      components: {
+        default: APIExample,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/general',
       name: 'General',
-      component: General
+      components: {
+        default: General,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/icons',
       name: 'Icons',
-      component: Icons
+      components: {
+        default: Icons,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/buttons',
       name: 'Buttons',
-      component: Buttons
+      components: {
+        default: Buttons,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/sliders',
       name: 'Sliders',
-      component: Sliders
+      components: {
+        default: Sliders,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/timeline',
       name: 'Timeline',
-      component: Timeline
+      components: {
+        default: Timeline,
+        header: DefaultHeader
+      }
     },
     {
       path: '/ui-elements/modals',
       name: 'Modals',
-      component: Modals
+      components: {
+        default: Modals,
+        header: DefaultHeader
+      }
     },
     {
       path: '/forms/general-elements',
       name: 'GeneralElements',
-      component: GeneralElements
+      components: {
+        default: GeneralElements,
+        header: DefaultHeader
+      }
     },
     {
       path: '/forms/advanced-elements',
       name: 'AdvancedElements',
-      component: AdvancedElements
+      components: {
+        default: AdvancedElements,
+        header: DefaultHeader
+      }
     }
   ],
   linkActiveClass: 'active'

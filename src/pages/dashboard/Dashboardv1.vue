@@ -54,11 +54,11 @@
 </template>
 
 <script>
-import VASmallBox from '../widgets/VASmallBox.vue'
-import VAChatBox from '../widgets/VAChatBox.vue'
-import VATodoList from '../widgets/VATodoList.vue'
-import VAQuickMail from '../widgets/VAQuickMail.vue'
-import VACalendar from '../widgets/VACalendar.vue'
+import VASmallBox from '../../widgets/VASmallBox.vue'
+import VAChatBox from '../../widgets/VAChatBox.vue'
+import VATodoList from '../../widgets/VATodoList.vue'
+import VAQuickMail from '../../widgets/VAQuickMail.vue'
+import VACalendar from '../../widgets/VACalendar.vue'
 
 export default {
   name: 'dashboard',

@@ -1,65 +1,40 @@
 <template>
-  <!-- Info boxes -->
-  <section class="content">
+  <div class="dashboard">
     <row>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">CPU Traffic</span>
-            <span class="info-box-number">90<small>%</small></span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+      <div class="col-lg-3 col-xs-6">
+        <va-info-box
+          bgColor="bg-aqua"
+          bgIcon="ion ion-ios-gear-outline"
+          text="CPU TRAFFIC"
+          number="90"
+          numberType="percentage"
+        ></va-info-box>
       </div>
-      <!-- /.col -->
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Likes</span>
-            <span class="info-box-number">41,410</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+      <div class="col-lg-3 col-xs-6">
+        <va-info-box
+          bgColor="bg-red"
+          bgIcon="fa fa-google-plus"
+          text="LIKES"
+          number="41,410"
+        ></va-info-box>
       </div>
-      <!-- /.col -->
-
-      <!-- fix for small devices only -->
-      <div class="clearfix visible-sm-block"></div>
-
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Sales</span>
-            <span class="info-box-number">760</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+      <div class="col-lg-3 col-xs-6">
+        <va-info-box
+          bgColor="bg-green"
+          bgIcon="ion ion-ios-cart-outline"
+          text="SALES"
+          number="760"
+        ></va-info-box>
       </div>
-      <!-- /.col -->
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">New Members</span>
-            <span class="info-box-number">2,000</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+      <div class="col-lg-3 col-xs-6">
+        <va-info-box
+          bgColor="bg-yellow"
+          bgIcon="ion ion-ios-people-outline"
+          text="NEW MEMBERS"
+          number="2,000"
+        ></va-info-box>
       </div>
-      <!-- /.col -->
     </row>
-    <!-- /.row -->
 
     <row>
       <div class="col-md-12">
@@ -435,7 +410,7 @@
                 <form action="#" method="post">
                   <div class="input-group">
                     <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                        <span class="input-group-btn">
+                    <span class="input-group-btn">
                           <button type="button" class="btn btn-warning btn-flat">Send</button>
                         </span>
                   </div>
@@ -627,7 +602,7 @@
             <div class="progress">
               <div class="progress-bar" style="width: 50%"></div>
             </div>
-                <span class="progress-description">
+            <span class="progress-description">
                   50% Increase in 30 Days
                 </span>
           </div>
@@ -644,7 +619,7 @@
             <div class="progress">
               <div class="progress-bar" style="width: 20%"></div>
             </div>
-                <span class="progress-description">
+            <span class="progress-description">
                   20% Increase in 30 Days
                 </span>
           </div>
@@ -661,7 +636,7 @@
             <div class="progress">
               <div class="progress-bar" style="width: 70%"></div>
             </div>
-                <span class="progress-description">
+            <span class="progress-description">
                   70% Increase in 30 Days
                 </span>
           </div>
@@ -678,7 +653,7 @@
             <div class="progress">
               <div class="progress-bar" style="width: 40%"></div>
             </div>
-                <span class="progress-description">
+            <span class="progress-description">
                   40% Increase in 30 Days
                 </span>
           </div>
@@ -756,7 +731,7 @@
                 <div class="product-info">
                   <a href="javascript:void(0)" class="product-title">Samsung TV
                     <span class="label label-warning pull-right">$1800</span></a>
-                      <span class="product-description">
+                  <span class="product-description">
                         Samsung 32" 1080p 60Hz LED Smart HDTV.
                       </span>
                 </div>
@@ -769,7 +744,7 @@
                 <div class="product-info">
                   <a href="javascript:void(0)" class="product-title">Bicycle
                     <span class="label label-info pull-right">$700</span></a>
-                      <span class="product-description">
+                  <span class="product-description">
                         26" Mongoose Dolomite Men's 7-speed, Navy Blue.
                       </span>
                 </div>
@@ -781,7 +756,7 @@
                 </div>
                 <div class="product-info">
                   <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                      <span class="product-description">
+                  <span class="product-description">
                         Xbox One Console Bundle with Halo Master Chief Collection.
                       </span>
                 </div>
@@ -794,7 +769,7 @@
                 <div class="product-info">
                   <a href="javascript:void(0)" class="product-title">PlayStation 4
                     <span class="label label-success pull-right">$399</span></a>
-                      <span class="product-description">
+                  <span class="product-description">
                         PlayStation 4 500GB Console (PS4)
                       </span>
                 </div>
@@ -813,14 +788,87 @@
       <!-- /.col -->
     </row>
     <!-- /.row -->
-  </section>
+
+
+    <row>
+      <div class="col-md-8">
+        <row>
+          <div class="col-md-6">
+            <va-direct-chat
+              theme="primary"
+              :talkList="[]"
+              :contacts="[]"
+              title="Direct Chat"
+              :badgeCount="3"
+            ></va-direct-chat>
+          </div>
+          <div class="col-md-6">
+            <va-user-list></va-user-list>
+          </div>
+        </row>
+      </div>
+    </row>
+    <row>
+      <div class="col-md-4">
+        <va-info-box
+          wrapBgColor="bg-yellow"
+          bgIcon="ion ion-ios-pricetag-outline"
+          text="Inventory"
+          number="5200"
+          :isProgress="true"
+          numberType="comma"
+          progressDescription="50% Increase in 30 Days"
+          :percentage="50"
+        ></va-info-box>
+        <va-info-box
+          wrapBgColor="bg-green"
+          bgIcon="ion ion-ios-pricetag-outline"
+          text="Mentions"
+          number="92050"
+          :isProgress="true"
+          numberType="comma"
+          progressDescription="20% Increase in 30 Days"
+          :percentage="20"
+        ></va-info-box>
+        <va-info-box
+          wrapBgColor="bg-red"
+          bgIcon="ion ion-ios-pricetag-outline"
+          text="Downloads"
+          number="114381"
+          numberType="comma"
+          :isProgress="true"
+          progressDescription="70% Increase in 30 Days"
+          :percentage="70"
+        ></va-info-box>
+        <va-info-box
+          wrapBgColor="bg-aqua"
+          bgIcon="ion ion-ios-pricetag-outline"
+          text="Direct Messages"
+          number="163921"
+          numberType="comma"
+          :isProgress="true"
+          progressDescription="40% Increase in 30 Days"
+          :percentage="40"
+        ></va-info-box>
+      </div>
+    </row>
+  </div>
 </template>
 
 <script>
+import VAInfoBox from '../../widgets/VAInfoBox.vue'
+import VADirectChat from '../../widgets/VADirectChat.vue'
+import VAUserList from '../../widgets/VAUserList.vue'
+
 export default {
-  name: 'sample',
+  name: 'DashboardV2',
   created () {
 
+  },
+  components: {
+    'va-info-box': VAInfoBox,
+    'va-direct-chat': VADirectChat,
+    'va-user-list': VAUserList
   }
 }
 </script>
