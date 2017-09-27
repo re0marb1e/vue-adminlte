@@ -51,32 +51,12 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
+                  <va-notification-item v-for="item in notificationItems"
+                                        :link="item.link"
+                                        :text="item.text"
+                                        :icon="item.icon"
+                  >
+                  </va-notification-item>
                 </ul>
               </li>
               <li class="footer"><a href="#">View all</a></li>
@@ -93,66 +73,10 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Create a nice theme
-                        <small class="pull-right">40%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Some task I need to do
-                        <small class="pull-right">60%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">60% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h3>
-                        Make beautiful transitions
-                        <small class="pull-right">80%</small>
-                      </h3>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
+                  <va-task-item v-for="item in taskItems"
+                                :name="item.name"
+                                :percent="item.percent"
+                  ></va-task-item>
                 </ul>
               </li>
               <li class="footer">
@@ -216,6 +140,8 @@
   import { mapGetters } from 'vuex'
 
   import VAMessageItem from './VAMessageItem'
+  import VANotificationItem from './VANotificationItem'
+  import VATaskItem from './VATaskItem'
 
   import img1 from 'admin-lte/dist/img/user2-160x160.jpg'
   import img2 from 'admin-lte/dist/img/user3-128x128.jpg'
@@ -242,6 +168,48 @@
     }
   ]
 
+  const notificationItems = [
+    {
+      icon: 'fa fa-users text-aqua',
+      text: '5 new members joined today'
+    },
+    {
+      icon: 'fa fa-warning text-yellow',
+      text: 'Very long description here that may not fit into the page and may cause design problems'
+    },
+    {
+      icon: 'fa fa-users text-red',
+      text: '5 new members joined'
+    },
+    {
+      icon: 'fa fa-shopping-cart text-green',
+      text: '25 sales made'
+    },
+    {
+      icon: 'fa fa-user text-red',
+      text: 'You changed your username'
+    }
+  ]
+
+  const taskItems = [
+    {
+      name: 'Design some buttons',
+      percent: 20
+    },
+    {
+      name: 'Create a nice theme',
+      percent: 40
+    },
+    {
+      name: 'Some task I need to do',
+      percent: 60
+    },
+    {
+      name: 'Make beautiful transitions',
+      percent: 80
+    }
+  ]
+
   export default {
     name: 'va-navibar',
     computed: {
@@ -253,11 +221,15 @@
       ])
     },
     components: {
-      'va-message-item': VAMessageItem
+      'va-message-item': VAMessageItem,
+      'va-notification-item': VANotificationItem,
+      'va-task-item': VATaskItem
     },
     data: function () {
       return {
-        messageItems
+        messageItems,
+        notificationItems,
+        taskItems
       }
     }
   }
