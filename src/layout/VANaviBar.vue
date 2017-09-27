@@ -28,67 +28,13 @@
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
+                  <va-message-item v-for="item in messageItems"
+                                   :sender="item.sender"
+                                   :time="item.time"
+                                   :content="item.content"
+                                   :avatar="item.avatar"
+                  >
+                  </va-message-item>
                 </ul>
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
@@ -154,7 +100,8 @@
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">20% Complete</span>
                         </div>
                       </div>
@@ -168,7 +115,8 @@
                         <small class="pull-right">40%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">40% Complete</span>
                         </div>
                       </div>
@@ -182,7 +130,8 @@
                         <small class="pull-right">60%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">60% Complete</span>
                         </div>
                       </div>
@@ -196,7 +145,8 @@
                         <small class="pull-right">80%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                           <span class="sr-only">80% Complete</span>
                         </div>
                       </div>
@@ -263,18 +213,53 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
 
-export default {
-  name: 'va-navibar',
-  computed: {
-    ...mapGetters([
-      'unreadMessagesCount',
-      'unreadNotificationsCount',
-      'remainTasksCount',
-      'currentUser'
-    ])
+  import VAMessageItem from './VAMessageItem'
+
+  import img1 from 'admin-lte/dist/img/user2-160x160.jpg'
+  import img2 from 'admin-lte/dist/img/user3-128x128.jpg'
+  import img3 from 'admin-lte/dist/img/user4-128x128.jpg'
+
+  const messageItems = [
+    {
+      sender: 'Support Team',
+      time: '5 minutes',
+      content: 'Why not buy a new awesome theme?',
+      avatar: img1
+    },
+    {
+      sender: 'AdminLTE Design Team',
+      time: '2 hours',
+      content: 'Why not buy a new awesome theme?',
+      avatar: img2
+    },
+    {
+      sender: 'Developers',
+      time: 'Today',
+      content: 'Why not buy a new awesome theme?',
+      avatar: img3
+    }
+  ]
+
+  export default {
+    name: 'va-navibar',
+    computed: {
+      ...mapGetters([
+        'unreadMessagesCount',
+        'unreadNotificationsCount',
+        'remainTasksCount',
+        'currentUser'
+      ])
+    },
+    components: {
+      'va-message-item': VAMessageItem
+    },
+    data: function () {
+      return {
+        messageItems
+      }
+    }
   }
-}
 
 </script>
