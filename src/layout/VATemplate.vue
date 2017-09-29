@@ -23,6 +23,7 @@
       }
     },
     created () {
+      document.body.classList.add('skin-blue', 'sidebar-mini')
     },
     components: {
       'va-navibar': VANaviBar,

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import DefaultHeader from 'pages/DefaultHeader.vue'
 import Admin from 'pages/Admin.vue'
+import Login from 'pages/Login.vue'
 
 import DashboardV1 from 'pages/dashboard/Dashboardv1.vue'
 import DashboardV2 from 'pages/dashboard/Dashboardv2.vue'
@@ -32,140 +33,147 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  linkActiveClass: 'active',
   routes: [
     {
+      path: '/',
+      name: 'Login',
+      component: Login
+    },
+    {
       path: '/admin',
-      components: Admin
-    },
-    {
-      path: '/dashboard/v1',
-      alias: '/',
-      name: 'DashboardV1',
-      components: {
-        default: DashboardV1,
-        header: DashboardV1Header
-      }
-    },
-    {
-      path: '/dashboard/v2',
-      name: 'DashboardV2',
-      components: {
-        default: DashboardV2,
-        header: DashboardV2Header
-      }
-    },
-    {
-      path: '/examples/infobox',
-      name: 'InfoBoxExample',
-      components: {
-        default: InfoBoxExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/examples/chart',
-      name: 'ChartExample',
-      components: {
-        default: ChartExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/examples/alert',
-      name: 'AlertExample',
-      components: {
-        default: AlertExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/examples/modal',
-      name: 'ModalExample',
-      components: {
-        default: ModalExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/examples/widgets',
-      name: 'WidgetsExample',
-      components: {
-        default: WidgetsExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/examples/api-example',
-      name: 'APIExample',
-      components: {
-        default: APIExample,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/general',
-      name: 'General',
-      components: {
-        default: General,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/icons',
-      name: 'Icons',
-      components: {
-        default: Icons,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/buttons',
-      name: 'Buttons',
-      components: {
-        default: Buttons,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/sliders',
-      name: 'Sliders',
-      components: {
-        default: Sliders,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/timeline',
-      name: 'Timeline',
-      components: {
-        default: Timeline,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/ui-elements/modals',
-      name: 'Modals',
-      components: {
-        default: Modals,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/forms/general-elements',
-      name: 'GeneralElements',
-      components: {
-        default: GeneralElements,
-        header: DefaultHeader
-      }
-    },
-    {
-      path: '/forms/advanced-elements',
-      name: 'AdvancedElements',
-      components: {
-        default: AdvancedElements,
-        header: DefaultHeader
-      }
+      component: Admin,
+      children: [
+        {
+          path: '/admin/dashboard/v1',
+          alias: '/',
+          name: 'DashboardV1',
+          components: {
+            default: DashboardV1,
+            header: DashboardV1Header
+          }
+        },
+        {
+          path: '/admin/dashboard/v2',
+          name: 'DashboardV2',
+          components: {
+            default: DashboardV2,
+            header: DashboardV2Header
+          }
+        },
+        {
+          path: '/admin/examples/infobox',
+          name: 'InfoBoxExample',
+          components: {
+            default: InfoBoxExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/charts/chart',
+          name: 'ChartExample',
+          components: {
+            default: ChartExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/examples/alert',
+          name: 'AlertExample',
+          components: {
+            default: AlertExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/examples/modal',
+          name: 'ModalExample',
+          components: {
+            default: ModalExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/examples/widgets',
+          name: 'WidgetsExample',
+          components: {
+            default: WidgetsExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/examples/api-example',
+          name: 'APIExample',
+          components: {
+            default: APIExample,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/general',
+          name: 'General',
+          components: {
+            default: General,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/icons',
+          name: 'Icons',
+          components: {
+            default: Icons,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/buttons',
+          name: 'Buttons',
+          components: {
+            default: Buttons,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/sliders',
+          name: 'Sliders',
+          components: {
+            default: Sliders,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/timeline',
+          name: 'Timeline',
+          components: {
+            default: Timeline,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/ui-elements/modals',
+          name: 'Modals',
+          components: {
+            default: Modals,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/forms/general-elements',
+          name: 'GeneralElements',
+          components: {
+            default: GeneralElements,
+            header: DefaultHeader
+          }
+        },
+        {
+          path: '/admin/forms/advanced-elements',
+          name: 'AdvancedElements',
+          components: {
+            default: AdvancedElements,
+            header: DefaultHeader
+          }
+        }
+      ]
     }
-  ],
-  linkActiveClass: 'active'
+  ]
 })
