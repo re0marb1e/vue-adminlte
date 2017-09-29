@@ -37,7 +37,7 @@
 </row>
 </template>
 <script>
-import VAInfoBox from '../widgets/VAInfoBox'
+import VAInfoBox from '../../widgets/VAInfoBox'
 
 export default {
   components: {

@@ -2,18 +2,19 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import DefaultHeader from 'pages/DefaultHeader.vue'
+import Admin from 'pages/Admin.vue'
 
 import DashboardV1 from 'pages/dashboard/Dashboardv1.vue'
 import DashboardV2 from 'pages/dashboard/Dashboardv2.vue'
 import DashboardV1Header from 'pages/dashboard/Dashboardv1Header.vue'
 import DashboardV2Header from 'pages/dashboard/Dashboardv2Header.vue'
 
-import InfoBoxExample from 'pages/InfoBoxExample'
-import ChartExample from 'pages/ChartExample'
-import AlertExample from 'pages/AlertExample'
-import ModalExample from 'pages/ModalExample'
-import WidgetsExample from 'pages/WidgetsExample'
-import APIExample from 'pages/APIExample'
+import InfoBoxExample from 'pages/examples/InfoBoxExample'
+import ChartExample from 'pages/examples/ChartExample'
+import AlertExample from 'pages/examples/AlertExample'
+import ModalExample from 'pages/examples/ModalExample'
+import WidgetsExample from 'pages/examples/WidgetsExample'
+import APIExample from 'pages/examples/APIExample'
 
 // UI Element Groups
 import General from 'pages/ui-elements/General.vue'
@@ -32,6 +33,10 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    {
+      path: '/admin',
+      components: Admin
+    },
     {
       path: '/dashboard/v1',
       alias: '/',

@@ -323,13 +323,13 @@
 </template>
 
 <script>
-import VAInfoBox from '../widgets/VAInfoBox.vue'
-import VASmallBox from '../widgets/VASmallBox.vue'
-import VABox from '../widgets/VABox.vue'
-import VADirectChat from '../widgets/VADirectChat.vue'
-import VASocialUserV1 from '../widgets/VASocialUser.v1.vue'
-import VASocialUserV2 from '../widgets/VASocialUser.v2.vue'
-import VASocialBox from '../widgets/VASocialBox.vue'
+import VAInfoBox from '../../widgets/VAInfoBox.vue'
+import VASmallBox from '../../widgets/VASmallBox.vue'
+import VABox from '../../widgets/VABox.vue'
+import VADirectChat from '../../widgets/VADirectChat.vue'
+import VASocialUserV1 from '../../widgets/VASocialUser.v1.vue'
+import VASocialUserV2 from '../../widgets/VASocialUser.v2.vue'
+import VASocialBox from '../../widgets/VASocialBox.vue'
 
 export default {
   name: 'WidgetsExample',
