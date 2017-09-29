@@ -1,39 +1,23 @@
 <template>
-  <li class="dropdown messages-menu">
+  <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <i class="fa fa-envelope-o"></i>
-      <span class="label label-success">{{ count }}</span>
+      <slot name="label"></slot>
     </a>
     <ul class="dropdown-menu">
-      <li class="header">{{ headerText }}</li>
+      <li class="header">
+        <slot name="header"></slot>
+      </li>
       <li>
         <ul class="menu">
           <slot></slot>
         </ul>
       </li>
-      <li class="footer"><a :href="footerLink">{{ footerText }}</a></li>
+      <li class="footer">
+        <slot name="footer"></slot>
+      </li>
     </ul>
   </li>
 </template>
 <script>
-  export default {
-    props: {
-      icon: {
-        type: String
-      },
-      count: {
-        type: Number
-      },
-      headerText: {
-        type: String
-      },
-      footerLink: {
-        type: String,
-        default: '#'
-      },
-      footerText: {
-        type: String
-      }
-    }
-  }
+  export default {}
 </script>

@@ -18,59 +18,47 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <va-dropdown headerText="You have :count messages" :count="7" footer-text="See All Messages">
+          <va-dropdown class="messages-menu">
+            <template slot="label">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">{{ unreadMessagesCount }}</span>
+            </template>
+            <span slot="header">You have {{ unreadMessagesCount }} messages</span>
             <va-message-item v-for="item in messageItems"
                              :sender="item.sender"
                              :time="item.time"
                              :content="item.content"
-                             :avatar="item.avatar"
-            >
+                             :avatar="item.avatar">
             </va-message-item>
+            <a slot="footer" href="#">View all messages</a>
           </va-dropdown>
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <va-dropdown class="notifications-menu">
+            <template slot="label">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">{{ unreadNotificationsCount }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{ unreadNotificationsCount }} notifications</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <va-notification-item v-for="item in notificationItems"
-                                        :link="item.link"
-                                        :text="item.text"
-                                        :icon="item.icon"
-                  >
-                  </va-notification-item>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
+            </template>
+            <span slot="header">You have {{ unreadNotificationsCount }} notifications</span>
+            <va-notification-item v-for="item in notificationItems"
+                                  :link="item.link"
+                                  :text="item.text"
+                                  :icon="item.icon">
+            </va-notification-item>
+            <a slot="footer" href="#">View all notifications</a>
+          </va-dropdown>
           <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <va-dropdown class="tasks-menu">
+            <template slot="label">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">{{ remainTasksCount }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{ remainTasksCount }} tasks</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <va-task-item v-for="item in taskItems"
-                                :name="item.name"
-                                :percent="item.percent"
-                  ></va-task-item>
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+            </template>
+            <span slot="header">You have {{ remainTasksCount }} tasks</span>
+            <va-task-item v-for="item in taskItems"
+                          :name="item.name"
+                          :percent="item.percent"
+            ></va-task-item>
+            <a slot="footer" href="#">View all tasks</a>
+          </va-dropdown>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,7 +69,6 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                 <p>
                   {{ currentUser.name }} - {{ currentUser.position }}
                   <small>{{ currentUser.createdAt }}</small>
