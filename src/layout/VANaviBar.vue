@@ -18,28 +18,15 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">{{ unreadMessagesCount }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{ unreadMessagesCount }} messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <va-message-item v-for="item in messageItems"
-                                   :sender="item.sender"
-                                   :time="item.time"
-                                   :content="item.content"
-                                   :avatar="item.avatar"
-                  >
-                  </va-message-item>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li>
+          <va-dropdown headerText="You have :count messages" :count="7" footer-text="See All Messages">
+            <va-message-item v-for="item in messageItems"
+                             :sender="item.sender"
+                             :time="item.time"
+                             :content="item.content"
+                             :avatar="item.avatar"
+            >
+            </va-message-item>
+          </va-dropdown>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -137,8 +124,9 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import {mapGetters} from 'vuex'
 
+  import VADropdown from './VADropdown'
   import VAMessageItem from './VAMessageItem'
   import VANotificationItem from './VANotificationItem'
   import VATaskItem from './VATaskItem'
@@ -159,6 +147,12 @@
       time: '2 hours',
       content: 'Why not buy a new awesome theme?',
       avatar: img2
+    },
+    {
+      sender: 'Developers',
+      time: 'Today',
+      content: 'Why not buy a new awesome theme?',
+      avatar: img3
     },
     {
       sender: 'Developers',
@@ -223,7 +217,8 @@
     components: {
       'va-message-item': VAMessageItem,
       'va-notification-item': VANotificationItem,
-      'va-task-item': VATaskItem
+      'va-task-item': VATaskItem,
+      'va-dropdown': VADropdown
     },
     data: function () {
       return {
