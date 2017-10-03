@@ -31,7 +31,7 @@ import AdvancedElements from 'pages/forms/AdvancedElements.vue'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   linkActiveClass: 'active',
   routes: [
@@ -43,6 +43,9 @@ export default new Router({
     {
       path: '/admin',
       component: Admin,
+      meta: {
+        requireAuth: true
+      },
       children: [
         {
           path: '/admin/dashboard/v1',
@@ -177,3 +180,14 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireAuth)) {
+    // do something
+    next()
+  } else {
+    next()
+  }
+})
+
+export default router

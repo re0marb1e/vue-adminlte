@@ -118,79 +118,6 @@
   import VANotificationItem from './VANotificationItem'
   import VATaskItem from './VATaskItem'
 
-  import img1 from 'admin-lte/dist/img/user2-160x160.jpg'
-  import img2 from 'admin-lte/dist/img/user3-128x128.jpg'
-  import img3 from 'admin-lte/dist/img/user4-128x128.jpg'
-
-  const messageItems = [
-    {
-      sender: 'Support Team',
-      time: '5 minutes',
-      content: 'Why not buy a new awesome theme?',
-      avatar: img1
-    },
-    {
-      sender: 'AdminLTE Design Team',
-      time: '2 hours',
-      content: 'Why not buy a new awesome theme?',
-      avatar: img2
-    },
-    {
-      sender: 'Developers',
-      time: 'Today',
-      content: 'Why not buy a new awesome theme?',
-      avatar: img3
-    },
-    {
-      sender: 'Developers',
-      time: 'Today',
-      content: 'Why not buy a new awesome theme?',
-      avatar: img3
-    }
-  ]
-
-  const notificationItems = [
-    {
-      icon: 'fa fa-users text-aqua',
-      text: '5 new members joined today'
-    },
-    {
-      icon: 'fa fa-warning text-yellow',
-      text: 'Very long description here that may not fit into the page and may cause design problems'
-    },
-    {
-      icon: 'fa fa-users text-red',
-      text: '5 new members joined'
-    },
-    {
-      icon: 'fa fa-shopping-cart text-green',
-      text: '25 sales made'
-    },
-    {
-      icon: 'fa fa-user text-red',
-      text: 'You changed your username'
-    }
-  ]
-
-  const taskItems = [
-    {
-      name: 'Design some buttons',
-      percent: 20
-    },
-    {
-      name: 'Create a nice theme',
-      percent: 40
-    },
-    {
-      name: 'Some task I need to do',
-      percent: 60
-    },
-    {
-      name: 'Make beautiful transitions',
-      percent: 80
-    }
-  ]
-
   export default {
     name: 'va-navibar',
     computed: {
@@ -199,20 +126,22 @@
         'unreadNotificationsCount',
         'remainTasksCount',
         'currentUser'
-      ])
+      ]),
+      messageItems () {
+        return this.$store.state.messages.main
+      },
+      notificationItems () {
+        return this.$store.state.notifications.main
+      },
+      taskItems () {
+        return this.$store.state.tasks.main
+      }
     },
     components: {
       'va-message-item': VAMessageItem,
       'va-notification-item': VANotificationItem,
       'va-task-item': VATaskItem,
       'va-dropdown': VADropdown
-    },
-    data: function () {
-      return {
-        messageItems,
-        notificationItems,
-        taskItems
-      }
     }
   }
 
